@@ -41,7 +41,7 @@ if coregui:FindFirstChild("icetray_key") then
     return false
 end
 
-local shouldContinue = true
+local shouldContinue = false
 
 local function getRequest(url)
     return request({
@@ -75,7 +75,6 @@ end
 local function getKeyInfo(key)
     key = tostring(key)
     if key then
-        local verify = getRequest(key)
         return verify
     end
     return false
