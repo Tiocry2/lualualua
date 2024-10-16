@@ -75,6 +75,7 @@ end
 local function getKeyInfo(key)
     key = tostring(key)
     if key then
+        local verify = getRequest(key)
         return verify
     end
     return false
@@ -83,8 +84,12 @@ end
 local function validate(key)
     key = tostring(key)
     if not key then
-        while true do end
+    local verify = getRequest(key)
+    return verify
     end
+return false
+end 
+
     local newKey = ""
     for i=1, key:len() do
         local byte = key:byte(i)
